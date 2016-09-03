@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: question
+# key: qu
+# condition: (not (eq major-mode 'sh-mode))
+# --
+`(yas-with-comment "Question: ")`%

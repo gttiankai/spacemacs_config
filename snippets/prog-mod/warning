@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: warning
+# key: wa
+# condition: (not (eq major-mode 'sh-mode))
+# --
+`(yas-with-comment "WARNING: ")`%
