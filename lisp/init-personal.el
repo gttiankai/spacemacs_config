@@ -217,4 +217,19 @@
   (setq interprogram-paste-function 'copy-from-osx)
   )
 
+;; ========================================================================
+;;                     enhance the older function
+;; ========================================================================
+
+(add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+(add-hook 'c-mode-hook 'ggtags-mode)
+(add-hook 'c++-mode-hook 'ggtags-mode)
+(add-hook 'java-mode-hook 'ggtags-mode)
+(add-hook 'python-mode-hook 'ggtags-mode)
+
+(add-hook 'c-mode-hook 'linum-mode)
+(add-hook 'c++-mode-hook 'linum-mode)
+(add-hook 'java-mode-hook 'linum-mode)
+(add-hook 'python-mode-hook 'linum-mode)
+
 (provide 'init-personal)
