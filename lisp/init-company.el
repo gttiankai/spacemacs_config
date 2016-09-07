@@ -7,7 +7,7 @@
                                  auto-completion-private-snippets-direcotry t
                                  auto-completion-enable-sort-by-usage t
                                  auto-completion-enable-snippets-in-popup t
-                                 auto-completion-private-snippets-directory "~/git-hub/spacemacs_config/snippets"
+                                 auto-completion-private-snippets-directory "~/git-hub/spacemacs_config/snippets/"
                                  )))
 
 ;; disable company for org-mode

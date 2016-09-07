@@ -197,25 +197,6 @@
 (setq c-default-style "linux"
       c-basic-offset 4)
 
-(if (eq system-type 'darwin)
-    ;; http://stackoverflow.com/questions/13517910/yank-does-not-paste-text-when-using-emacs-over-ssh
-    (defun copy-from-osx ()
-      "Handle copy/paste intelligently on osx."
-      (let ((pbpaste (purecopy "/usr/bin/pbpaste")))
-        (if (and (eq system-type 'darwin)
-                 (file-exists-p pbpaste))
-            (let ((tramp-mode nil)
-                  (default-directory "~"))
-              (shell-command-to-string pbpaste)))))
-  (defun paste-to-osx (text &optional push)
-    "paste to osx"
-    (let ((process-connection-type nil))
-      (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-        (process-send-string proc text)
-        (process-send-eof proc))))
-  (setq interprogram-cut-function 'paste-to-osx)
-  (setq interprogram-paste-function 'copy-from-osx)
-  )
 
 ;; ========================================================================
 ;;                     enhance the older function
