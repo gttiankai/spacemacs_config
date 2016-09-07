@@ -31,7 +31,7 @@ values."
      git
      markdown
      org
-     osx
+     ;;osx
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -57,7 +57,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(org2jekyll)
+   dotspacemacs-additional-packages '(org2jekyll w3m )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -274,17 +274,18 @@ you should place you code here."
   (add-to-list 'load-path (expand-file-name "~/git-hub/spacemacs_config/lisp"))
   (require 'init-org)
   (require 'init-company)
-  (require 'init-personal)
   (require 'init-helm)
   (require 'init-org2jekyll)
   (require 'init-gtags)
   (require 'init-clipboard)
-
+  (require 'init-personal)
   (if (eq system-type 'darwin)
       (setq window-system-default-frame-alist
             '((x (font . "Inconsolata 18")) ;; 若frame在X下创建
               (nil))) ;; 若frame在terminal中创建
-      )
+    )
+  (if (eq system-type 'darwin)
+      (require 'init-osx-clipboard))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
