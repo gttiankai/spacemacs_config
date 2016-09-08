@@ -57,7 +57,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(org2jekyll w3m )
+   dotspacemacs-additional-packages '(org2jekyll w3m avy)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -124,11 +124,11 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    ;; older config "Source Code Pro" "Monaco" "Inconsolata"
-   dotspacemacs-default-font '("Inconsolata"
+   dotspacemacs-default-font '("Source Code Pro"
                                :size 18
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.5)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -279,6 +279,7 @@ you should place you code here."
   (require 'init-gtags)
   (require 'init-clipboard)
   (require 'init-personal)
+  (require 'init-avy)
   (if (eq system-type 'darwin)
       (setq window-system-default-frame-alist
             '((x (font . "Inconsolata 18")) ;; 若frame在X下创建
