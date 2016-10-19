@@ -35,7 +35,8 @@
 (global-set-key (kbd "C-c f") 'helm-for-files)
 
 (global-set-key (kbd "C-c i") 'helm-imenu)
-
+;; set key map ido-find-file to
+(global-set-key (kbd "C-x C-f") 'ido-find-file)
 
 ;; 向上翻页
 (defun window-move-up (&optional arg)
@@ -122,8 +123,15 @@
 ;;                                        :size 18
 ;;                                        )))
 
-
-
+(create-fontset-from-fontset-spec "-unknown-DejaVu Sans Mono-normal-normal-normal-*-20-*-*-*-m-0-fontset-myfontset")
+(set-fontset-font "fontset-myfontset" 'han "AR PL UKai CN")
+(add-to-list 'default-frame-alist '(font . "fontset-myfontset"))
+;; (if (or (eq system-type 'gnu/linux) (eq system-type 'linux) )
+;;     ( (create-fontset-from-fontset-spec "-unknown-DejaVu Sans Mono-normal-normal-normal-*-20-*-*-*-m-0-fontset-myfontset")
+;;       (set-fontset-font "fontset-myfontset" 'han "AR PL UKai CN")
+;;       (add-to-list 'default-frame-alist '(font . "fontset-myfontset"))
+;;       )
+;;   )
 ;; ========================================================================
 ;;                      add funciton
 ;; ========================================================================
@@ -213,4 +221,13 @@
 (add-hook 'java-mode-hook 'linum-mode)
 (add-hook 'python-mode-hook 'linum-mode)
 
+(if (or (eq system-type 'gnu/linux) (eq system-type 'linux) )
+    (add-to-list 'default-frame-alist '(fullscreen . fullboth))
+    )
+
+(require 'redo+)
+(global-set-key (kbd "C-?") 'redo)
+
+
 (provide 'init-personal)
+
