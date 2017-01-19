@@ -322,7 +322,7 @@ you should place your code here."
   (require 'init-clipboard)
   (require 'init-personal)
   (require 'init-avy)
-;;  (require 'init-flycheck)
+  (require 'init-flycheck)
   (require 'init-time)
   (require 'init-cargo)
   (require 'init-fcitx)
