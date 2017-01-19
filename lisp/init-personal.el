@@ -123,10 +123,11 @@
 ;;                                        :size 18
 ;;                                        )))
 
-(create-fontset-from-fontset-spec "-unknown-DejaVu Sans Mono-normal-normal-normal-*-20-*-*-*-m-0-fontset-myfontset")
-(set-fontset-font "fontset-myfontset" 'han "AR PL UKai CN")
-(add-to-list 'default-frame-alist '(font . "fontset-myfontset"))
-;; (if (or (eq system-type 'gnu/linux) (eq system-type 'linux) )
+;; (create-fontset-from-fontset-spec "-unknown-DejaVu Sans Mono-normal-normal-normal-*-20-*-*-*-m-0-fontset-myfontset")
+;; (set-fontset-font "fontset-myfontset" 'han "AR PL UKai CN")
+;; (add-to-list 'default-frame-alist '(font . "fontset-myfontset"))
+;; 
+                                        ; (if (or (eq system-type 'gnu/linux) (eq system-type 'linux) )
 ;;     ( (create-fontset-from-fontset-spec "-unknown-DejaVu Sans Mono-normal-normal-normal-*-20-*-*-*-m-0-fontset-myfontset")
 ;;       (set-fontset-font "fontset-myfontset" 'han "AR PL UKai CN")
 ;;       (add-to-list 'default-frame-alist '(font . "fontset-myfontset"))

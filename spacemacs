@@ -37,34 +37,38 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     ;; tools
      (auto-completion :variables
                     auto-completion-private-snippets-directory "~/git-hub/spacemacs_config/snippets")
      better-defaults
-     emacs-lisp
      git
      pandoc
      org
      gtags
      markdown
+     version-control
+     syntax-checking
+     (dash :variables
+           dash/helm-dash-docset-newpath "/Users/tiankai/Library/Application\ Support/Dash/DocSets")
+     ;; language
+     emacs-lisp
      javascript
      latex
+     html
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
      (c-c++ :variables
             c-c++-enable-clang-support t)
      python
-     (rust)
-     (dash :variables dash/helm-dash-docset-newpath "/Users/tiankai/Library/Application\ Support/Dash/DocSets")
+     rust
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(org2jekyll w3m avy redo+ ggtags fcitx )
+   dotspacemacs-additional-packages '(org2jekyll w3m avy redo+  fcitx )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -146,7 +150,7 @@ values."
                                :size 17
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.5)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -318,20 +322,12 @@ you should place your code here."
   (require 'init-clipboard)
   (require 'init-personal)
   (require 'init-avy)
+;;  (require 'init-flycheck)
   (require 'init-time)
   (require 'init-cargo)
   (require 'init-fcitx)
-  (if (eq system-type 'darwin)
-      (setq window-system-default-frame-alist
-            '((x (font . "Inconsolata 18")) ;; 若frame在X下创建
-              (nil))) ;; 若frame在terminal中创建
-    )
+  (require 'init-font)
   (if (eq system-type 'darwin)
       (require 'init-osx-clipboard))
-
-  (setq org-latex-to-pdf-process
-        '("xelatex -interaction nonstopmode -output-directory %o %f"
-          "xelatex -interaction nonstopmode -output-directory %o %f"
-          "xelatex -interaction nonstopmode -output-directory %o %f"))
 
   )

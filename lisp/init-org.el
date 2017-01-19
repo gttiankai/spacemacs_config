@@ -188,6 +188,7 @@
               emacs-lisp "lisp"))
 ;; }}
 
+;; add latex header for org file to export pdf formate file
 (setq org-latex-to-pdf-process
       '("xelatex -interaction nonstopmode -output-directory %o %f"
         "xelatex -interaction nonstopmode -output-directory %o %f"
