@@ -1,0 +1,5 @@
+#name : org export to pdf
+#contributor : Tiankai <gttiankai@gmail.com>
+# --
+#+LATEX_HEADER: \usepackage{xltxtra}
+#+LATEX_HEADER: \setmainfont{PingFangSC-Regular}
