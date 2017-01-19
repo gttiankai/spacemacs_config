@@ -33,4 +33,5 @@
   (interactive)
   (message "GTAGSLIBPATH=%s" (getenv "GTAGSLIBPATH")))
 
+(global-set-key (kbd "M-*") 'helm-gtags-pop-stack)
 (provide 'init-gtags)

@@ -227,6 +227,12 @@
 
 (require 'redo+)
 (global-set-key (kbd "C-?") 'redo)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;；config for evil
+;;:Make movement keys work like they should
+(define-key evil-normal-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-normal-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
 
 
 (provide 'init-personal)
