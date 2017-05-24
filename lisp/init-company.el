@@ -11,6 +11,6 @@
                                  )))
 
 ;; disable company for org-mode
-(spacemacs|disable-company org-mode)
+;; (spacemacs|disable-company org-mode)
 
 (provide 'init-company)
