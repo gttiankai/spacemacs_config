@@ -216,7 +216,6 @@
 (add-hook 'c++-mode-hook 'ggtags-mode)
 (add-hook 'java-mode-hook 'ggtags-mode)
 (add-hook 'python-mode-hook 'ggtags-mode)
-
 (add-hook 'c-mode-hook 'linum-mode)
 (add-hook 'c++-mode-hook 'linum-mode)
 (add-hook 'java-mode-hook 'linum-mode)
@@ -226,8 +225,8 @@
     (add-to-list 'default-frame-alist '(fullscreen . fullboth))
     )
 
-(require 'redo+)
-(global-set-key (kbd "C-?") 'redo)
+;; (require 'redo+)
+;; (global-set-key (kbd "C-?") 'redo)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;；config for evil
 ;;:Make movement keys work like they should
 (define-key evil-normal-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
@@ -235,6 +234,17 @@
 (define-key evil-motion-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
 (define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
 
-
+;;; add go path
+(add-to-list 'exec-path "/Users/tiankai/go/bin")
+(add-hook 'c-mode-hook 'auto-fill-mode)
+(add-hook 'c++-mode-hook 'auto-fill-mode)
+(add-hook 'java-mode-hook 'auto-fill-mode)
+(add-hook 'python-mode-hook 'auto-fill-mode)
+(add-hook 'c-mode-hook 'auto-fill-mode)
+(add-hook 'c++-mode-hook 'auto-fill-mode)
+(add-hook 'java-mode-hook 'auto-fill-mode)
+(add-hook 'python-mode-hook 'auto-fill-mode)
+(add-hook 'org-mode-hook 'auto-fill-mode)
+(setq-default fill-column 80)
 (provide 'init-personal)
 

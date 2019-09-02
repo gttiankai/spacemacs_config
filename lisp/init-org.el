@@ -79,6 +79,7 @@
 (setq org-log-done t
       org-completion-use-ido t
       org-edit-src-content-indentation 0
+      org-src-tab-acts-natively t
       org-edit-timestamp-down-means-later t
       org-agenda-start-on-weekday nil
       org-agenda-span 14
@@ -91,7 +92,7 @@
       ;; org v8
       org-odt-preferred-output-format "doc"
       org-tags-column 80
-      ;; org-startup-indented t
+      org-startup-indented t
       ;; {{ org 8.2.6 has some performance issue. Here is the workaround.
       ;; @see http://punchagan.muse-amuse.in/posts/how-i-learnt-to-use-emacs-profiler.html
       org-agenda-inhibit-startup t ;; ~50x speedup
@@ -122,7 +123,7 @@
 ;; Removes clocked tasks with 0:00 duration
 (setq org-clock-out-remove-zero-time-clocks t)
 
-;; Show the clocked-in task - if any - in the header line
+;; Show the clockedin task - if any - in the header line
 (defun sanityinc/show-org-clock-in-header-line ()
   (setq-default header-line-format '((" " org-mode-line-string " "))))
 
@@ -160,7 +161,7 @@
   ;; display wrapped lines instead of truncated lines
   (setq truncate-lines nil)
   (setq word-wrap t))
-(add-hook 'org-mode-hook 'org-mode-hook-setup)
+;;(add-hook 'org-mode-hook 'org-mode-hook-setup)
 
 (defadvice org-open-at-point (around org-open-at-point-choose-browser activate)
   (let ((browse-url-browser-function
@@ -173,12 +174,12 @@
                   (w3m-browse-url url t))))))
     ad-do-it))
 
-(defadvice org-publish (around org-publish-advice activate)
-  "Stop running major-mode hook when org-publish"
-  (let ((old load-user-customized-major-mode-hook))
-	(setq load-user-customized-major-mode-hook nil)
-    ad-do-it
-	(setq load-user-customized-major-mode-hook old)))
+;; (defadvice org-publish (around org-publish-advice activate)
+;;   "Stop running major-mode hook when org-publish"
+;;   (let ((old load-user-customized-major-mode-hook))
+;; 	(setq load-user-customized-major-mode-hook nil)
+;;     ad-do-it
+;; 	(setq load-user-customized-major-mode-hook old)))
 
 ;; {{ org2nikola set up
 (setq org2nikola-output-root-directory "~/.config/nikola")
